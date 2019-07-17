@@ -1,12 +1,16 @@
 {
-“AWSEBDockerrunVersion”: “1”,
-“Image”: {
-“Name”: “612293362657.dkr.ecr.eu-central-1.amazonaws.com/testapp-repository”,
-“Update”: “true”
-},
-“Ports”: [
-{
-“ContainerPort”: “5000”
-}
-]
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+           {
+            "name": "frontend",
+            "image": "612293362657.dkr.ecr.eu-central-1.amazonaws.com/testapp-repository:latest",
+            "memory": 128,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 5000
+                }
+            ]
+        }
+    ]
 }
